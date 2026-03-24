@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 transition-colors duration-200;
+  }
+  
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500;
+  }
+  
+  .dark .btn-secondary {
+    @apply bg-gray-700 text-gray-100 hover:bg-gray-600;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6 transition-all duration-200;
+  }
+  
+  .dark .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .dark .input {
+    @apply bg-gray-800 border-gray-600 text-gray-100;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors duration-200;
+  }
+  
+  .dark .sidebar-item {
+    @apply text-gray-300 hover:bg-gray-800;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-primary-100 text-primary-700;
+  }
+  
+  .dark .sidebar-item.active {
+    @apply bg-primary-900 text-primary-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(156 163 175) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgb(156 163 175);
+    border-radius: 3px;
+  }
+  
+  .dark .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgb(75 85 99);
+  }
+}
+
+/* Custom animations */
+.task-enter {
+  animation: slideUp 0.3s ease-out;
+}
+
+.task-complete {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Priority colors */
+.priority-high {
+  @apply border-l-4 border-red-500;
+}
+
+.priority-medium {
+  @apply border-l-4 border-yellow-500;
+}
+
+.priority-low {
+  @apply border-l-4 border-green-500;
+}
+
+/* Category badges */
+.category-assignments {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.dark .category-assignments {
+  @apply bg-blue-900 text-blue-200;
+}
+
+.category-projects {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.dark .category-projects {
+  @apply bg-purple-900 text-purple-200;
+}
+
+.category-workout {
+  @apply bg-green-100 text-green-800;
+}
+
+.dark .category-workout {
+  @apply bg-green-900 text-green-200;
+}
+
+.category-daily-routine {
+  @apply bg-orange-100 text-orange-800;
+}
+
+.dark .category-daily-routine {
+  @apply bg-orange-900 text-orange-200;
+}
+
+.category-learning {
+  @apply bg-indigo-100 text-indigo-800;
+}
+
+.dark .category-learning {
+  @apply bg-indigo-900 text-indigo-200;
+}
